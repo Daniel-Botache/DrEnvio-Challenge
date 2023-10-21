@@ -7,8 +7,8 @@ const Products_1 = __importDefault(require("../models/Products"));
 const getBasePriceController = async (productName) => {
     try {
         const product = await Products_1.default.findOne({ nombre: productName }, 'precio_base');
-        if (product && product.precio_base) {
-            return { precio_base: product.precio_base };
+        if (product) {
+            return product;
         }
         else {
             throw new Error('Producto no encontrado en la base de datos o no tiene precio base.');

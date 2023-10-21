@@ -20,7 +20,7 @@ const getSpecialPriceHandler = async (req, res) => {
         const specialPrice = (_a = user === null || user === void 0 ? void 0 : user.metadata) === null || _a === void 0 ? void 0 : _a.precios_especiales.find((price) => price.nombre_producto === productName);
         if (!specialPrice) {
             const basePrice = await (0, getBasePriceController_1.default)(productName);
-            res.status(404).json({ precio_base: basePrice.precio_base });
+            res.status(404).json({ producto: basePrice });
         }
         res.json(specialPrice);
     }
