@@ -19,7 +19,7 @@ export const getSpecialPriceHandler = async (req: Request, res: Response): Promi
   
       if (!specialPrice) {
         const basePrice = await getBasePriceController(productName);
-         res.status(404).json({ precio_base: basePrice.precio_base });
+         res.status(404).json({ producto: basePrice });
       }
     res.json(specialPrice);
   } catch (error) {
