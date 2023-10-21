@@ -1,8 +1,8 @@
 import { Router } from "express";
-import {getSpecialPriceHandler} from "../handlers/getSpecialPriceHandler"
+import { getSpecialPriceHandler } from "../handlers/getSpecialPriceHandler";
 
-const priceRouter:Router =Router()
+const priceRouter: Router = Router();
 
-priceRouter.get("/:user_id/:nombre_producto", getSpecialPriceHandler)
+priceRouter.get("/:user_id/:nombre_producto", getSpecialPriceHandler);
 
-export default priceRouter
+export default priceRouter;

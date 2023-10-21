@@ -1,7 +1,10 @@
-import { Request, Response } from 'express';
-import Products from '../models/Products';
+import { Request, Response } from "express";
+import Products from "../models/Products";
 
-export const getStockHandler = async (req: Request, res: Response): Promise<void> => {
+export const getStockHandler = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const products = await Products.find({ existencia: { $gt: 0 } });
 
